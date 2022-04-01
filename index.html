@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Morse Code</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="morse-code">
+            <h1 class="morse-code__heading">Morse Decoder</h1>
+            <form class="morse-code__form">
+                <div class="morse-code__container">
+                    <label for="morseInput">Input</label>
+                    <textarea id="morseInput" type="text" rows="5" cols="50">
+Hello
+                    </textarea>
+                </div>
+                <div class="morse-code__container">
+                    <label for="morseOutput">Output</label>
+                    <textarea
+                        id="morseOutput"
+                        type="text"
+                        name="input"
+                        rows="5"
+                        cols="50"
+                    ></textarea>
+                </div>
+                <button type="reset">Clear</button>
+            </form>
+        </div>
+    </body>
+    <script type="module" src="./script.js"></script>
+</html>
