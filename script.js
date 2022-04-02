@@ -5,6 +5,8 @@
 // selecting both of my tests
 const input = document.querySelector("#morseInput");
 const output = document.querySelector("#morseOutput");
+const switchModes = document.querySelector("#switchModes");
+const resetBtn = document.querySelector("#resetBtn");
 
 // DUE ON TUESDAY 5th of APRIL
 // ### MVP:
@@ -16,8 +18,14 @@ const output = document.querySelector("#morseOutput");
 
 // Have two functions that one morse to english and the other way around
 // Translate Object Example
+const buttonClicked = () => {
+    !input.disabled
+        ? ((input.disabled = true), (output.disabled = false))
+        : ((input.disabled = false), (output.disabled = true));
+};
 
-// MORSE CODE DICTIONARY
+switchModes.addEventListener("click", buttonClicked);
+
 const morseCodeDictionary = {
     ".-": "a",
     "-...": "b",
@@ -55,47 +63,68 @@ const morseCodeDictionary = {
     "---..": "8",
     "----.": "9",
     "-----": "0",
+    ".-.-.-": ".",
+    "--..--": ",",
+    "..--..": "?",
+    "-.-.--": "!",
+    "-....-": "-",
+    "-..-.": "/",
+    ".--.-.": "@",
+    "-.--.": "(",
+    "-.--.-": ")",
+    " ": " ",
 };
 
-const alphabetAndNum = () => {
-    const mc = Object.entries(morseCodeDictionary)
-        .map((key) =>
-            key[0]
-                .split(",")
-                .map((value) => morseCodeDictionary[value])
-                .join("")
-        )
-        .join("");
-    return mc;
-};
-console.log(alphabetAndNum(""));
+// Reversing key and value in morsecodedictionary and storing it in a new object => morsecode : "alphabet,numbers and punctuation"
+const morsecode = Object.entries(morseCodeDictionary).reduce(
+    (object, [key, value]) => {
+        object[value] = key;
+        return object;
+    },
+    {}
+);
+console.log(morsecode);
 
-// REVERSAL OF KEY AND VALUE AND STORE THEM IN A NEW OBJECT
-const morsecode = () => {
-    const reversedArr = Object.entries(morseCodeDictionary).reduce(
-        (object, [key, value]) => {
-            object[value] = key;
-            return object;
-        },
-        {}
-    );
-    const mc = Object.entries(reversedArr)
-        .map((key) =>
-            key[0]
-                .split(",")
-                .map((value) => reversedArr[value])
-                .join("")
-        )
-        .join(",");
-    console.log(mc);
-    return mc;
+// match input.value to our constant morsecode and we return that into our output.value
+// split word into seperate letter, map each letter to its specific key in the morsecode depending on the letter, and return its value
+// key:value = {[0],[1]}
+const englishToMorseCode = () => {
+    // got the alphabets stuck together
+    const engToMc = input.value
+        .toLowerCase()
+        .split("")
+        .map((letter) => {
+            return Object.entries(morsecode).find(
+                (key) => key[0] === letter
+            )[1];
+        })
+        .join(" ");
+    console.log(engToMc);
+    output.value = engToMc;
 };
-console.log(morsecode("card"));
+console.log(englishToMorseCode());
 
-const typeWriter = (letter) => {
-    // retrieving the element that triggered a specific event
-    output.textContent = letter.target.value;
+input.addEventListener("input", englishToMorseCode);
+
+const morsecodeToEnglish = () => {
+    const mcToEng = output.value
+        .toLowerCase()
+        .split("")
+        .map((letter) => {
+            return Object.entries(morseCodeDictionary).find(
+                (key) => key[0] === letter
+            )[1];
+        })
+        .join(" ");
+    console.log(mcToEng);
+    input.value = mcToEng;
 };
-// input.addEventListener("input", typeWriter);
-input.addEventListener("input", morsecode);
-input.addEventListener("input", alphabetAndNum);
+output.addEventListener("input", morsecodeToEnglish);
+
+// CLEAR INPUT FIELDS
+const clearAll = () => {
+    input.value = "";
+    output.value = "";
+};
+
+resetBtn.addEventListener("click", clearAll);

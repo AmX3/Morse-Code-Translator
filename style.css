@@ -12,23 +12,21 @@ body {
   text-align: center;
   flex-wrap: nowrap;
   min-height: 100vh;
+  background-color: #131521;
 }
 
 .morse-code {
-  background: linear-gradient(#141e30, #243b55);
+  background-color: #242637;
+  color: #ebeef9;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   text-align: center;
   flex-wrap: nowrap;
-  color: white;
-  border-width: 1px;
-  border-style: solid;
   border-radius: 30px;
-  box-shadow: 0px 5px 15px -5px #00000070;
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
 }
 .morse-code__heading {
   font-size: 41px;
@@ -38,7 +36,6 @@ body {
   text-transform: none;
   text-decoration: none;
   text-align: center;
-  margin-bottom: 20px;
   font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
 }
 .morse-code__container {
@@ -48,9 +45,41 @@ body {
   flex-direction: column;
   text-align: center;
   flex-wrap: nowrap;
-  margin: 50px 0;
+  margin: 30px 0px;
+}
+.morse-code__label {
+  color: #53ccf7;
+  font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-decoration: none;
+}
+.morse-code__paragraph {
+  font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+  color: #686a78;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-decoration: none;
+}
+.morse-code__button {
+  border-radius: 10px;
+  border: none;
+  background-color: #2066a0;
+  color: #53ccf7;
+  padding: 10px 20px;
 }
 
 textarea {
   resize: none;
+  font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+}
+
+.footer__link {
+  font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
 }
