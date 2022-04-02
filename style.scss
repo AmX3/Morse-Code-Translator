@@ -9,31 +9,58 @@
 body {
     @include mixins.flex($just-cont: center, $align-itm: center);
     min-height: 100vh;
+    background-color: palette.$background;
 }
 
 .morse-code {
-    background: linear-gradient(#141e30, #243b55);
-    @include mixins.flex($flx-dir: column, $just-cont: center);
-    color: white;
-    border-width: 1px;
-    border-style: solid;
+    @include mixins.background-and-color(
+        palette.$form-background,
+        palette.$light-blue
+    );
+    @include mixins.flex($flx-dir: column, $just-cont: space-around);
     border-radius: 30px;
-    box-shadow: 0px 5px 15px -5px #00000070;
-    @include mixins.height-and-width(500px, 500px);
+    // box-shadow: 0px 5px 15px -5px #00000070;
+    @include mixins.height-and-width(600px, 600px);
 
     &__heading {
         @include mixins.text-style(41px, 800, 36px);
         text-align: center;
-        margin-bottom: 20px;
+
         font-family: palette.$heading-font;
     }
 
     &__container {
         @include mixins.flex($flx-dir: column, $align-itm: start);
-        margin: 50px 0;
+        margin: 30px 0px;
+    }
+
+    &__label {
+        color: palette.$sky-blue;
+        font-family: palette.$body-font;
+        @include mixins.text-style(16px, 400, 27px);
+    }
+
+    &__paragraph {
+        font-family: palette.$body-font;
+        color: palette.$gray;
+        @include mixins.text-style(16px, 400, 27px);
+    }
+
+    &__button {
+        border-radius: 10px;
+        border: none;
+        @include mixins.background-and-color(palette.$blue, palette.$sky-blue);
+        padding: 10px 20px;
     }
 }
 
 textarea {
     resize: none;
+    font-family: palette.$body-font;
+}
+
+.footer {
+    &__link {
+        font-family: palette.$body-font;
+    }
 }

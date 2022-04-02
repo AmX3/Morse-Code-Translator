@@ -6,28 +6,61 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Morse Code</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+            media="all"
+        />
     </head>
     <body>
         <div class="morse-code">
             <h1 class="morse-code__heading">Morse Decoder</h1>
+            <p class="morse-code__paragraph">
+                Interactive Morse Code translator. Conversion between MorseCode
+                and English text.
+            </p>
             <form class="morse-code__form">
                 <div class="morse-code__container">
-                    <label for="morseInput">Input</label>
-                    <textarea id="morseInput" type="text" rows="5" cols="50">
+                    <label for="morseInput" class="morse-code__label"
+                        >English Text</label
+                    >
+                    <textarea
+                        id="morseInput"
+                        type="text"
+                        rows="5"
+                        cols="50"
+                        placeholder="Enter English Text here"
+                    >
                     </textarea>
                 </div>
+                <i
+                    class="fa-solid fa-arrow-right-arrow-left fa-2x"
+                    id="switchModes"
+                ></i>
+
                 <div class="morse-code__container">
-                    <label for="morseOutput">Output</label>
+                    <label for="morseOutput" class="morse-code__label"
+                        >Morse Code</label
+                    >
                     <textarea
                         id="morseOutput"
                         type="text"
                         name="input"
                         rows="5"
                         cols="50"
+                        placeholder="Enter MorseCode here"
                     ></textarea>
                 </div>
-                <button type="reset">Clear</button>
+                <i id="resetBtn" class="fa-solid fa-arrows-rotate fa-2x"></i>
             </form>
+            <footer class="footer footer__link">
+                Built by
+                <a href="https://amx3.github.io/Personal-Portfolio/">Amelia</a>
+            </footer>
         </div>
     </body>
     <script type="module" src="./script.js"></script>
