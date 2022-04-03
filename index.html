@@ -17,55 +17,52 @@
         />
     </head>
     <body>
-        <div class="morse-code">
-            <h1 class="morse-code__heading">Morse Decoder</h1>
-            <p class="morse-code__paragraph">
-                Interactive Morse Code translator. Conversion between MorseCode
-                and English text.
-            </p>
-            <form class="morse-code__form">
-                <div class="morse-code__container">
-                    <label for="morseInput" class="morse-code__label"
-                        >English Text</label
-                    >
-                    <textarea
-                        id="morseInput"
-                        type="text"
-                        rows="5"
-                        cols="50"
-                        placeholder="Enter English Text here"
-                    >
-                    </textarea>
-                </div>
-                <i
-                    class="fa-solid fa-arrow-right-arrow-left fa-2x"
-                    id="switchModes"
-                ></i>
+        <form class="morse-code">
+            <img src="./images/morsekeycode.png" />
+            <div class="morse-code__form">
+                <h1 class="morse-code__heading">Morse Code Translator</h1>
+                <p class="morse-code__paragraph">
+                    Conversion between MorseCode and English text.
+                </p>
 
-                <div class="morse-code__container">
-                    <label for="morseOutput" class="morse-code__label"
-                        >Morse Code</label
-                    >
-                    <textarea
-                        id="morseOutput"
-                        type="text"
-                        name="input"
-                        rows="5"
-                        cols="50"
-                        placeholder="Enter MorseCode here"
-                    ></textarea>
-                </div>
-                <i id="resetBtn" class="fa-solid fa-arrows-rotate fa-2x"></i>
-            </form>
-            <footer class="footer footer__link">
-                Built by
-                <a
-                    href="https://amx3.github.io/Personal-Portfolio/"
-                    target="_blank"
-                    >Amelia</a
+                <label for="morseInput" class="morse-code__label"
+                    >English Text</label
                 >
-            </footer>
-        </div>
+                <textarea
+                    class="morse-code__inputs"
+                    id="morseInput"
+                    type="text"
+                    rows="5"
+                    cols="50"
+                    placeholder="Enter English Text here"
+                >
+                </textarea>
+                <img src="./images/switchmodes.png" id="switchModes" />
+
+                <label for="morseOutput" class="morse-code__label"
+                    >Morse Code</label
+                >
+                <textarea
+                    class="morse-code__inputs"
+                    id="morseOutput"
+                    type="text"
+                    name="input"
+                    rows="5"
+                    cols="50"
+                    placeholder="Enter MorseCode here"
+                ></textarea>
+                <img src="./images/reset.png" id="resetBtn" />
+                <p>
+                    Built by
+                    <a
+                        class="morse-code__link"
+                        href="https://amx3.github.io/Personal-Portfolio/"
+                        target="_blank"
+                        >Amelia</a
+                    >
+                </p>
+            </div>
+        </form>
     </body>
     <script type="module" src="./script.js"></script>
 </html>

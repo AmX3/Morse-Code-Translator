@@ -6,12 +6,13 @@ const resetBtn = document.querySelector("#resetBtn");
 
 // BUTTON THAT SHOULD DISABLE THE OTHER TEXT AREA
 const buttonClicked = () => {
-    !input.disabled
-        ? ((input.disabled = true), (output.disabled = false))
-        : ((input.disabled = false), (output.disabled = true));
+    !english.disabled
+        ? ((english.disabled = true), (morsecode.disabled = false))
+        : ((english.disabled = false), (morsecode.disabled = true));
 };
-
 switchModes.addEventListener("click", buttonClicked);
+// on window load, our buttonClicked function is applied
+window.addEventListener("load", buttonClicked);
 
 const morseCodeDictionary = {
     ".-": "a",
@@ -141,7 +142,8 @@ const morsecodeToEnglish = () => {
             console.log(morseCodeLetter);
             return morseCodeLetter.join("");
         })
-        .join(" ");
+        .join(" ")
+        .toUpperCase();
     console.log(mcToEng);
     english.value = mcToEng;
 };
