@@ -1,3 +1,5 @@
+"use strict";
+
 // DOM INTERACTION
 const english = document.querySelector("#morseInput");
 const morsecode = document.querySelector("#morseOutput");
@@ -6,9 +8,9 @@ const resetBtn = document.querySelector("#resetBtn");
 
 // BUTTON THAT SHOULD DISABLE THE OTHER TEXT AREA
 const buttonClicked = () => {
-    !english.disabled
-        ? ((english.disabled = true), (morsecode.disabled = false))
-        : ((english.disabled = false), (morsecode.disabled = true));
+    !morsecode.disabled
+        ? (morsecode.disabled = true)((english.disabled = false))
+        : (morsecode.disabled = false)((english.disabled = true));
 };
 switchModes.addEventListener("click", buttonClicked);
 // on window load, our buttonClicked function is applied
@@ -60,6 +62,11 @@ const morseCodeDictionary = {
     ".--.-.": "@",
     "-.--.": "(",
     "-.--.-": ")",
+    "---...": ":",
+    ".----.": "'",
+    ".-.-.": "+",
+    ".--.-.": "@",
+    "-...-": "=",
     " ": " ",
 };
 
@@ -89,7 +96,7 @@ thought process =>
 - Join the words together with a /
 */
 
-const englishToMorseCode = () => {
+export const englishToMorseCode = () => {
     const engToMc = english.value
         .toLowerCase()
         .replace(/\s{1,}/g, "/")
@@ -121,7 +128,7 @@ thought process =>
 - Join the words together => Hello There
 */
 
-const morsecodeToEnglish = () => {
+export const morsecodeToEnglish = () => {
     const mcToEng = morsecode.value
         .trim()
         .split("/")
@@ -151,7 +158,7 @@ const morsecodeToEnglish = () => {
 morsecode.addEventListener("input", morsecodeToEnglish);
 
 // CLEAR INPUT FIELDS
-const clearAll = () => {
+export const clearAll = () => {
     english.value = "";
     morsecode.value = "";
 };
