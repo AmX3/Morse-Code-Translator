@@ -36,6 +36,9 @@ body {
   height: 600px;
   width: 600px;
 }
+.morse-code__image {
+  height: 300px;
+}
 .morse-code__heading {
   font-size: 41px;
   font-weight: 800;

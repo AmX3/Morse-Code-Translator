@@ -31,6 +31,10 @@ body {
         @include mixins.height-and-width(600px, 600px);
     }
 
+    &__image {
+        height: 300px;
+    }
+
     &__heading {
         @include mixins.text-style(41px, 800, 36px);
         font-family: palette.$heading-font;
