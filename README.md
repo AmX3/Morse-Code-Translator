@@ -53,9 +53,12 @@ https://amx3.github.io/Morse-Code-Translator/
 -   If letter is empty return an empty string otherwise if the morsecode input does not register a similar key, the value will return as "X"
 -   Join the letters together, then the words together
 
-<!-- ## Resources Used
+## Future Improvements
 
+-   Implementation of sound
+
+## Resources Used
 
 -   uiGradients - Beautiful colored gradients at https://uigradients.com
 
--   Icons: https://freeicons.io/ -->
+-   Icons: https://freeicons.io/
