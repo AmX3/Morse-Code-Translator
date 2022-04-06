@@ -6,26 +6,18 @@ export const alphabetAndNum = (dictObject) => {
     }, {});
 };
 
-export const englishToMorseCode = (dictObject, textToTranslate) => {
-    return textToTranslate
+export const englishToMorseCode = (english, dictObject) => {
+    return english
         .toLowerCase()
-        .replace(/\s{1,}/g, "/")
-        .split("/")
-        .map((word) => {
-            return word
-                .split("")
-                .map((letter) => {
-                    return Object.entries(dictObject).find(
-                        (key) => key[0] === letter
-                    )[1];
-                })
-                .join(" ");
+        .split("")
+        .map((letter) => {
+            return dictObject[letter];
         })
-        .join("/");
+        .join(" ");
 };
 
-export const morsecodeToEnglish = (dictObject, textToTranslate) => {
-    return textToTranslate
+export const morsecodeToEnglish = (morsecode, dictObject) => {
+    return morsecode
         .trim()
         .split("/")
         .map((morseCodeWord) => {

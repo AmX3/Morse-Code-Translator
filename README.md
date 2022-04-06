@@ -38,10 +38,8 @@ Deployed Site: https://amx3.github.io/Morse-Code-Translator/
 
 -   Reversing key and value and putting it in a new object using the global variable
 -   To match our keys, english input value has been changed to lowercase
--   Replaced the space in english words with a / using regex
 -   Split each word into distinct letters and returned the corresponding morsecode depending on its matching key
 -   Joined the letters together to form a single word
--   Joined the words together with a / as seen in Morse Code behaviour
 
 ### Morse Code to English Conversion
 
@@ -56,8 +54,6 @@ Deployed Site: https://amx3.github.io/Morse-Code-Translator/
 ## Future Improvements
 
 -   Implementation of sound
-
--   Implementation of unit testing
 
 ## Resources Used
 
