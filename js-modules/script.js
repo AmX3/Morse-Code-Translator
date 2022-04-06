@@ -1,5 +1,3 @@
-"use strict";
-
 import {
     englishToMorseCode,
     morsecodeToEnglish,
@@ -28,8 +26,8 @@ window.addEventListener("load", buttonClicked);
 // English to MorseCode
 english.addEventListener("input", () => {
     morsecode.value = englishToMorseCode(
-        alphabetAndNum(morseCodeDictionary),
-        english.value
+        english.value,
+        alphabetAndNum(morseCodeDictionary)
     );
 });
 
@@ -38,8 +36,8 @@ morsecode.addEventListener(
     "input",
     () =>
         (english.value = morsecodeToEnglish(
-            morseCodeDictionary,
-            morsecode.value
+            morsecode.value,
+            morseCodeDictionary
         ))
 );
 
