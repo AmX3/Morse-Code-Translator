@@ -36,10 +36,10 @@ describe("Testing englishToMorseCode() that translates english to morsecode", ()
             englishToMorseCode("e", alphabetAndNum(morseCodeDictionary))
         ).toBe(".");
         expect(
-            englishToMorseCode("d", alphabetAndNum(morseCodeDictionary))
+            englishToMorseCode("D", alphabetAndNum(morseCodeDictionary))
         ).toBe("-..");
         expect(
-            englishToMorseCode("z", alphabetAndNum(morseCodeDictionary))
+            englishToMorseCode("Z", alphabetAndNum(morseCodeDictionary))
         ).toBe("--..");
     });
 
@@ -57,6 +57,15 @@ describe("Testing englishToMorseCode() that translates english to morsecode", ()
             englishToMorseCode("8", alphabetAndNum(morseCodeDictionary))
         ).toBe("---..");
     });
+
+    it("Should handle a mix of uppercase and lowercase characters and symbols", () => {
+        expect(
+            englishToMorseCode("H3ll0!", alphabetAndNum(morseCodeDictionary))
+        ).toBe(".... ...-- .-.. .-.. ----- -.-.--");
+        expect(
+            englishToMorseCode("k1R1b@Ti", alphabetAndNum(morseCodeDictionary))
+        ).toBe("-.- .---- .-. .---- -... .--.-. - ..");
+    });
 });
 
 describe("Testing MorseCode translation to English, ()", () => {
@@ -64,6 +73,7 @@ describe("Testing MorseCode translation to English, ()", () => {
         expect(morsecodeToEnglish(".-", morseCodeDictionary)).toBe("A");
         expect(morsecodeToEnglish(".", morseCodeDictionary)).toBe("E");
         expect(morsecodeToEnglish("-..", morseCodeDictionary)).toBe("D");
+        expect(morsecodeToEnglish("--.", morseCodeDictionary)).toBe("G");
     });
 
     it("Should translate words and spaces correctly", () => {
@@ -77,6 +87,9 @@ describe("Testing MorseCode translation to English, ()", () => {
 
     it("Should translate and return invalid Morse Characters as invalid input", () => {
         expect(morsecodeToEnglish("....... ", morseCodeDictionary)).toBe(
+            "INVALID INPUT"
+        );
+        expect(morsecodeToEnglish(".----- ", morseCodeDictionary)).toBe(
             "INVALID INPUT"
         );
     });
